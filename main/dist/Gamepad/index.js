@@ -76,5 +76,5 @@ class Scratch3GamePad {
     };
 
 }
-module.exports = Scratch3GamePad;
+Scratch.extensions.register(new Scratch3Gamepad());
 
