@@ -1,4 +1,4 @@
-class Scratch3GamePad {
+class Scratch3GamePad () {
 
     constructor (runtime) {
         /**
