@@ -47,4 +47,4 @@ class esp32editor {
     }
 }
 
-Scratch.extensions.register(new Test());
+Scratch.extensions.register(new esp32editor());
