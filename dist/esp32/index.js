@@ -1,4 +1,4 @@
-class esp32editor {
+class Esp32editor {
 
   constructor() {}
 
@@ -47,4 +47,4 @@ class esp32editor {
     }
 }
 
-Scratch.extensions.register(new esp32editor());
+Scratch.extensions.register(new Esp32editor());
