@@ -1,11 +1,11 @@
-class Esp32editor {
+class Esp32_Editor {
 
   constructor() {}
 
   getInfo() { // 拡張機能の各種情報
     return {
       id: 'esp32editor',
-      name: 'ESP32 Editor', // 拡張機能の名前
+      name: 'ESP32_Editor', // 拡張機能の名前
       blocks: [ // 各ブロックの定義
         {
             opcode: 'connected',
@@ -47,4 +47,4 @@ class Esp32editor {
     }
 }
 
-Scratch.extensions.register(new Esp32editor());
+Scratch.extensions.register(new Esp32_Editor());
