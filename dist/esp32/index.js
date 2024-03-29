@@ -9,11 +9,11 @@ class Esp32_Editor {
       blocks: [ // 各ブロックの定義
         {
             opcode: 'connected',
-            blockType: BlockType.COMMAND,
+            blockType: Scratch.BlockType.COMMAND,
             text: 'Connected ESP32 (baudRate:[TEXT])',
           arguments: {
             TEXT: {
-              type: ArgumentType.STRING,
+              type: Scratch.ArgumentType.STRING,
               defaultValue: "9600"
             }
           }
@@ -21,7 +21,7 @@ class Esp32_Editor {
         {
           opcode: 'disconnect',
           text: 'Disconnected ESP32',
-          blockType: BlockType.COMMAND,
+          blockType: Scratch.BlockType.COMMAND,
         }
       ]
     }
