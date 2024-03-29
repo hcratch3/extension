@@ -1,7 +1,7 @@
-const ArgumentType = require('../../extension-support/argument-type');
-const BlockType = require('../../extension-support/block-type');
-const Cast = require('../../util/cast');
-const log = require('../../util/log');
+//const ArgumentType = require('../../extension-support/argument-type');
+//const BlockType = require('../../extension-support/block-type');
+//const Cast = require('../../util/cast');
+//const log = require('../../util/log');
 
 /**
  * Icon svg to be displayed at the left edge of each extension block, encoded as a data URI.
