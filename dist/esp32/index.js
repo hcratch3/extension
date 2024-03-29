@@ -23,7 +23,7 @@ const menuIconURI = 'data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAdoAAAHaC
  * @param {Runtime} runtime - the runtime instantiating this block package.
  * @constructor
  */
-class Scratch3NewBlocks {
+class ESP32Editor {
     constructor (runtime) {
         /**
          * The runtime instantiating this block package.
@@ -41,15 +41,21 @@ class Scratch3NewBlocks {
      */
     getInfo () {
         return {
-            id: 'newblocks',
-            name: 'New Blocks',
+            id: 'esp32editor',
+            name: 'ESP32 Editor',
             menuIconURI: menuIconURI,
             blockIconURI: blockIconURI,
             blocks: [
                 {
                     opcode: 'connected',
                     blockType: BlockType.COMMAND,
-                    text: 'Connected ESP32',
+                    text: 'Connected ESP32 (baudRate:[TEXT])',
+                    arguments: {
+                        TEXT: {
+                            type: ArgumentType.STRING,
+                            defaultValue: "9600"
+                        }
+                    }
                 },
                 {
                     opcode: 'disconnect',
@@ -67,18 +73,29 @@ class Scratch3NewBlocks {
      * @param {object} args - the block arguments.
      * @property {number} TEXT - the text.
      */
-    writeLog (args) {
+    connected (args) {
         const text = Cast.toString(args.TEXT);
-        log.log(text);
+        try {
+            serialPort = await navigator.serial.requestPort();
+            await serialPort.open({ baudRate: text });
+            alart('Connected to serial port');
+        } catch (error) {
+            console.error('Failed to connect:', error);
+        }
     }
 
     /**
      * Get the browser.
      * @return {number} - the user agent.
      */
-    getBrowser () {
-        return navigator.userAgent;
+    disconnected () {
+        try {
+            await serialPort.close();
+            alart('Disconnected from serial port');
+        } catch (error) {
+            console.error('Failed to disconnect:', error);
+        }
     }
 }
 
-module.exports = Scratch3NewBlocks;
+Scratch.extensions.register(new ESP32Editor())
