@@ -24,16 +24,16 @@ const menuIconURI = 'data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAdoAAAHaC
  * @constructor
  */
 class ESP32Editor {
-    constructor (runtime) {
+    //constructor (runtime) {
         /**
          * The runtime instantiating this block package.
          * @type {Runtime}
          */
-        this.runtime = runtime;
+        //this.runtime = runtime;
 
         //this._onTargetCreated = this._onTargetCreated.bind(this);
         //this.runtime.on('targetWasCreated', this._onTargetCreated);
-    }
+    //}
 
 
     /**
