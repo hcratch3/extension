@@ -4,13 +4,13 @@ class Test {
 
   getInfo() { // 拡張機能の各種情報
     return {
-      id: 'test',
-      name: 'Test', // 拡張機能の名前
-      blocks: [ // 各ブロックの定義
+      "id": "save_code",
+      "name": "Save Code",
+      "blocks": [
         {
-          opcode: 'hello', // このブロックが実行されると、helloという関数が呼ばれる
-          blockType: Scratch.BlockType.COMMAND,　// 「10歩動かす」のような通常の命令ブロック
-          text: 'hello' // ブロックに表示されるテキスト
+          "opcode": "saveCode",
+          "blockType": "command",
+          "text": "Save Code"
         }
       ]
     }
