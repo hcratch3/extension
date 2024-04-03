@@ -9,7 +9,7 @@ class Test {
       "blocks": [
         {
           "opcode": "saveCode",
-          "blockType": "command",
+          "blockType": Scratch.BlockType.COMMAND,
           "text": "Save Code"
         }
       ]
